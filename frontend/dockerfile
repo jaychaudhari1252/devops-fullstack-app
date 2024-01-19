@@ -13,7 +13,7 @@ RUN source ~/.bashrc && nvm install 14.17.0 && nvm use 14.17.0 && nvm alias defa
  
 # Set the working directory
 WORKDIR /devops-fullstack-app/frontend
-COPY ..
+COPY . .
 # Expose the port your app runs on
 EXPOSE 3000
 
