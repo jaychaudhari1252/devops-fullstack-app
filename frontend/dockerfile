@@ -1,5 +1,4 @@
-FROM centos:7
-LABEL author=jaychaudhari
+FROM node:14.17.0
 RUN yum install git -y
 RUN git init
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
