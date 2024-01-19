@@ -9,4 +9,5 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | 
 RUN source ~/.bashrc && nvm install 14.17.0 -y && nvm use 14.17.0 && nvm alias default 14.17.0
 WORKDIR /devops-fullstack-app/
 WORKDIR /frontend/
-RUN npm install && RUN npm start
+CMD npm install -y
+CMD ["npm", "run"]
