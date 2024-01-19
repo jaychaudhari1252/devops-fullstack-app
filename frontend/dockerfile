@@ -1,6 +1,16 @@
 FROM centos:7
 LABEL author=jaychaudhari
 RUN yum install git
+EXPOSE 3000
 RUN git init
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
+ADD curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+ADD wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+RUN source ~/.bashrc
+RUN nvm install 14.17.0
+RUN nvm use 14.17.0
+RUN nvm alias default 14.17.0
 WORKDIR devops-fullstack-app
+WORKDIR frontend
+RUN npm install
+RUN npm start
