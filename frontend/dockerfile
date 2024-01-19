@@ -18,5 +18,4 @@ WORKDIR /devops-fullstack-app/frontend
 EXPOSE 3000
 
 # Install dependencies and start the application
-CMD ["npm", "install"]
-RUN "npm", "start"
+CMD npm install -y && ["npm" , "start"]
