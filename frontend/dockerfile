@@ -10,4 +10,4 @@ RUN source ~/.bashrc && nvm install 14.17.0 -y && nvm use 14.17.0 && nvm alias d
 WORKDIR /devops-fullstack-app/
 WORKDIR /frontend/
 CMD npm install -y
-CMD ["npm", "run"]
+CMD npm start
