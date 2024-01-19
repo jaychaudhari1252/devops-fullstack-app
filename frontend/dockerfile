@@ -1,7 +1,6 @@
 FROM centos:7
 LABEL author=jaychaudhari
 RUN yum install git -y
-EXPOSE 3000
 RUN git init
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
@@ -9,4 +8,6 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | 
 RUN source ~/.bashrc && nvm install 14.17.0 -y && nvm use 14.17.0 && nvm alias default 14.17.0
 WORKDIR /devops-fullstack-app/
 WORKDIR /frontend/
-CMD npm install -y && RUN ["npm", "start"]
+EXPOSE 3000
+RUN npm install -y
+CMD ["npm", "start"]
