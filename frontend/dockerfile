@@ -1,11 +1,21 @@
-FROM node:14.17.0
+FROM centos:7
+
+# Install Git
 RUN yum install git -y
-RUN git init
+
+# Clone the repository
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
+
+# Install Node.js using NVM
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN source ~/.bashrc && nvm install 14.17.0 -y && nvm use 14.17.0 && nvm alias default 14.17.0
-WORKDIR /devops-fullstack-app/
-WORKDIR /frontend/
+SHELL ["/bin/bash", "-c"]
+RUN source ~/.bashrc && nvm install 14.17.0 && nvm use 14.17.0 && nvm alias default 14.17.0
+
+# Set the working directory
+WORKDIR /devops-fullstack-app/frontend
+
+# Expose the port your app runs on
 EXPOSE 3000
-CMD npm install -y && ["npm", "start"]
+
+# Install dependencies and start the application
+CMD ["npm", "install", "&&", "npm", "start"]
