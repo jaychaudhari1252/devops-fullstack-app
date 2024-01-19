@@ -1,0 +1,5 @@
+FROM centos:7
+LABEL author=jaychaudhari
+RUN yum install git
+RUN git init
+RUN git clone https://github.com/jaychaudhari1252/cloud-jay.git
