@@ -2,5 +2,4 @@ FROM node:14.17.0
 WORKDIR /root/devops-fullstack-app/frontend
 EXPOSE 3000
 COPY . .
-run
 CMD npm install -y  && ["npm" , "start"]
