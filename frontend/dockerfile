@@ -3,7 +3,7 @@ RUN apt-get install git
 RUN git init
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
 WORKDIR /usr/src/app
-COPY package*.json app.js ./
+COPY package*.json. /
 COPY . .
 EXPOSE 3000
 CMD npm install -y  && ["npm" , "start"]
