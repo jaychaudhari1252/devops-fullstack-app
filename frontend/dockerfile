@@ -1,6 +1,6 @@
 FROM node:14.17.0
 #LABEL creater = Jay Chaudhari
-RUN apk add git
+RUN apt-get install -y git
 RUN git init
 RUN git clone https://github.com/jaychaudhari1252/devops-fullstack-app.git
 WORKDIR /usr/src/app
