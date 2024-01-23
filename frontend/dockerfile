@@ -1,7 +1,5 @@
 FROM node:14.17.0
 #LABEL creater = Jay Chaudhari
-RUN apt-get install -y git
-RUN git init
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
